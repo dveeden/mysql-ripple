@@ -43,6 +43,7 @@ void sighandler(int signo) {
 }
 
 int main(int argc, char **argv) {
+  gflags::ParseCommandLineFlags(&argc, &argv, true);
   mysql_ripple::Init(argc, argv);
 
   LOG(INFO) << "InitPlugins";
